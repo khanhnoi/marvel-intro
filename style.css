@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +8,114 @@
 body {
     display: flex;
     justify-content: center;
-    min-height: 100vh;
-    background: #666;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(#820707, #151414); */
+    /* dang hinh tron */
+    background: radial-gradient(#820707, #151414);
+    font-family: "Roboto Condensed";
+    overflow: hidden;
+}
+
+#marvel {
+    color: #fff;
+    font-size: 200vh;
+    opacity: 0;
+    /* fix bug */
+    /* font-weight: 700; */
+    /* nét chữ : text-stroke */
+    /* Phông chữ trên web về cơ bản là đồ họa dựa trên vector.  Đó là lý do tại sao bạn có thể hiển thị chúng */
+    /* -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black; */
+    -webkit-text-stroke: 2px #000;
+    /* tăng hoặc giảm khoảng cách giữa các ký tự trong đoạn text. */
+    letter-spacing: -1vh;
+    /* giam bot  - tiến */
+    animation: marvelAnimate 8s ease 0s forwards;
+    /* animation: marvelAnimate 6s ease 2s infinite; */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    position: relative;
+    z-index: 2;
+    transition: 1s;
+    cursor: pointer;
+}
+
+#marvel:hover {
+    text-shadow: 0 0 8px #fff;
+}
+
+@keyframes marvelAnimate {
+    0% {
+        opacity: 0;
+        font-size: 200vh;
+        color: rgba(255, 255, 255, 0);
+        -webkit-text-stroke-color: #000;
+    }
+    5% {
+        opacity: 0.2;
+    }
+    20% {
+        opacity: 1;
+        color: rgba(255, 255, 255, 0);
+        -webkit-text-stroke-color: #000;
+    }
+    60% {
+        opacity: 1;
+        color: rgba(255, 255, 255, 0.5);
+        -webkit-text-stroke-color: #000;
+    }
+    100% {
+        opacity: 1;
+        font-size: 20vh;
+        color: rgba(255, 255, 255, 1);
+        -webkit-text-stroke-color: transparent;
+    }
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    background: url(1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    /* Center the image */
+    /* background-repeat: no-repeat; */
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    z-index: 1;
+    transform: scale(1.5);
+    animation: hideBg 8s ease 0s forwards;
+    /* animation: hideBg 8s ease 0s infinite; */
+    /* animation: translateBg 0.2s ease 0s infinite; */
+}
+
+@keyframes hideBg {
+    0% {
+        opacity: 0.9;
+    }
+    40% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes translateBg {
+    0% {
+        opacity: 0.9;
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
 }
