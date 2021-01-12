@@ -8,7 +8,10 @@ $(function() {
     const intervelBg = setInterval(function() {
         //i have 16 images
         bgNum = (bgNum % 15) + 1;
-        bg.css('background', `url(${bgNum}.jpg)`);
+        // dev
+        // bg.css('background', `url(${bgNum}.jpg)`);
+        bg.css('background', `url(http://khanhnoi.mobie.in/demo/marvel-intro/${bgNum}.jpg)`);
+
     }, 300)
 
     setTimeout(function() {
